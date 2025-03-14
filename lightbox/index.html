@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: cyan;">
+    
+    <div class="galleryOverlay"></div>
+    <div class="imagebox">
+        <span>&times;</span>
+        <img src="" alt="text">
+    </div>
+
+
+
+
+
+
+    <div class="container" id="gallery">
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+        <div class="galleryItems">
+            <img src="images/pic.jpg" alt="logo">
+        </div>
+    </div>
+<script>
+    let overlay = document.querySelector(".galleryOverlay");
+    let imagebox = document.querySelector(".imagebox");
+    let img = document.querySelector(".imagebox img");
+    let close = document.querySelector(".imagebox span");
+    let gallery = document.querySelector("#gallery");
+
+    gallery.addEventListener("click", (e) => {
+        let currImagePath = event.target.src;
+        if(currImagePath == undefined) return;
+        console.log(currImagePath);
+        overlay.classList.add("galleryOverlayShow")
+        imagebox.classList.add("imageboxShow")
+        img.src = currImagePath;
+    })
+
+    close.addEventListener("click", () => {
+        overlay.classList.remove("galleryOverlayShow")
+        imagebox.classList.remove("imageboxShow")
+    })
+
+    overlay.addEventListener("click",() => {
+        overlay.classList.remove("galleryOverlayShow")
+        imagebox.classList.remove("imageboxShow")
+    })
+
+</script>
+
+</body>
+</html>

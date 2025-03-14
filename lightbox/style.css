@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 1170px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.galleryOverlay{
+    width: 100%;
+    /* disable */
+    display: none;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0, 0.5);
+
+}
+
+.galleryItems{
+    flex-basis: 23%;
+    margin: 1%;
+}
+.galleryItems img{
+    width: 100%;
+    height: 250px;
+    
+}
+
+.imagebox{
+    width: 50%;
+    height: 70%;
+    left: 25%;
+    top: 15%;
+    background-color: white;
+    position: fixed;
+    transition: 0.5s;
+    /* transform */
+    transform: scale(0);
+}
+
+.imagebox img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.imagebox span{
+    position:absolute;
+    right: 15px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.galleryOverlayShow{
+    display: block;
+}
+
+.imageboxShow{
+    transform: scale(1);
+}
